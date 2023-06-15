@@ -1,11 +1,28 @@
-let fs = require('fs');
+import { read } from './verifyFile.js';
+import { filterLinks, validateFunction } from './verifyLinks.js';
 
-const mdLinks = (path, options) => {
+export default function mdLinks(path, option) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, 'md', function(err,data) {
- console.log(data);
+    read(path).then(fileContent => {
+      if (!Array.isArray(fileContent)) {
+        filterLinks(fileContent).then(linksObj => {
+          if (!option.validate) {
+            resolve(linksObj);
+          }
+          else {
+            validateFunction(linksObj)
+              .then(arrayLinkResolved => {
+                resolve(arrayLinkResolved);
+              });
+          }
+        });
+      } else {
+        fileContent.forEach((objContent) => {
+          filterLinks(objContent).then((linksObj) => {
+            resolve(linksObj);
+          }).catch(reject);
+        });
+      };
     });
   });
-};
-
-module.exports = mdLinks;
+}
