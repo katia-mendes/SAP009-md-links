@@ -25,9 +25,9 @@ Essa ferramenta analisa um arquivo markdown e retorna no terminal a lista de lin
 
 ## 3. Objetivos de aprendizagem
 
-JavaScript
-Node.js
-HTTP
+JavaScript; 
+Node.js; 
+HTTP;
 
 
 ## 4. Considerações gerais
