@@ -34,8 +34,8 @@ HTTP.
 
 Instalação:
 
-O módulo poder ser instalado com o seguinte comando:
- npm install md-links-katia-mendes
+O módulo poder ser instalado com o seguinte comando: 
+  `npm install md-links-katia-mendes`
 
 
 ## 5. Funcionalidades
@@ -56,24 +56,24 @@ Essas funcionalidades ajudam a identificar e validar os links presentes nos arqu
 1- Listagem de links
 
 O comportamento padrão ao colocar apenas o caminho do arquivo é devolver apenas os links e suas devidas descrições:
-md-links ./caminho-do-arquivo/arquivo.md
+ `md-links ./caminho-do-arquivo/arquivo.md`
 
 
 2- Validação de links
 
 Ao passar a opção --validate, o módulo faz uma requisição HTTP e verifica se o link funciona ou não retornando seu devido status.Para validar os links em um arquivo de interesse, utilize o comando:
-md-links ./caminho-do-arquivo/arquivo.md --validate
+ `md-links ./caminho-do-arquivo/arquivo.md --validate`
 
 
 3- Estatísticas de links
 
 Ao passar a opção --stats o output será um texto com estatísticas básicas sobre os links, informando a quantidade de links no arquivo e quantos são únicos:
 
-md-links ./caminho-do-arquivo/arquivo.md --stats
+ `md-links ./caminho-do-arquivo/arquivo.md --stats`
 
 Para obter estatísticas que necessitem dos resultados da validação pode combinar --stats e --validate,
 ou seja, utilize o comando abaixo:
-md-links ./caminho-do-arquivo/arquivo.md --stats --validate
+ `md-links ./caminho-do-arquivo/arquivo.md --stats --validate`
 
 
 ## 7. Testes
